@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #eef2ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            width: 340px;
+            box-shadow: 0 4px 15px #00000020;
+        }
+
+        h2 {
+            text-align: center;
+            color: #3949ab;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+        }
+
+        input {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            border: 1px solid #c5cae9;
+            border-radius: 6px;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 22px;
+            padding: 11px;
+            background: #3949ab;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #283593;
+        }
+
+        #message {
+            text-align: center;
+            color: green;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Student Registration</h2>
+
+        <form id="registrationForm">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="contact">Contact Number</label>
+            <input type="tel" id="contact" name="contact"
+                   pattern="[0-9]{10}" maxlength="10" required>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <p id="message" role="status"></p>
+    </div>
+
+    <script>
+        document.getElementById("registrationForm")
+            .addEventListener("submit", function(event) {
+                event.preventDefault();
+                document.getElementById("message").textContent =
+                    "Form submitted successfully!";
+            });
+    </script>
+</body>
+</html>
